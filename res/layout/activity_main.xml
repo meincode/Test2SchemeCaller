@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.test2schemecaller.MainActivity"
+    android:orientation="vertical" >
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <Button 
+        android:id="@+id/testListBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test1-list"/>
+    <Button 
+        android:id="@+id/testRegBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test1-reg"/>
+    <Button 
+        android:id="@+id/testPackageBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="call-packagename"/>
+    <Button 
+        android:id="@+id/testMyhomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test1-reg"/>
+
+</LinearLayout>

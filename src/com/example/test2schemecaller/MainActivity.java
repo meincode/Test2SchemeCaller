@@ -33,15 +33,18 @@ public class MainActivity extends ActionBarActivity {
 		
 		String myURL = "http://www.naver.com";
 		webView = (WebView) findViewById(R.id.webView);
-		 
 		webView.getSettings().setJavaScriptEnabled(true);
+
 		webView.setWebViewClient(new WebViewClient() {
 			public boolean shouldOverrideUrlLoading(final WebView webView, final String url) {
 
-		        final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-
-		        // The following flags launch the app outside the current app
-		        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+				Intent intent = null;
+				if(url.indexOf("tel://") > -1){
+					intent = new Intent(Intent.ACTION_CALL, Uri.parse(url));		// 전화번호 콜일
+				}else{
+					intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));		// 전화번호 외일
+				}
+		        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);					
 
 				try{
 					// 원하는 스키마, 호스트 못찾으면 에러 발생함.
